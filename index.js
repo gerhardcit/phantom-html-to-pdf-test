@@ -1,7 +1,9 @@
 const express = require('express');
 const http = require('http');
 const fs = require('fs');
-var conversion = require("phantom-html-to-pdf")();
+var conversion = require("phantom-html-to-pdf")({
+    phantomPath: require("phantomjs-prebuilt").path
+});
 
 var app = express();
 
