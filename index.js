@@ -21,7 +21,7 @@ app.get('/html', function (req, res) {
 app.get('/pdf', function (req, res) {
 
     fs.readFile("./test.html", function (err, html) {
-        conversion({ html: "html" }, function (err, pdf) {
+        conversion({ html: html }, function (err, pdf) {
             console.log(pdf.logs);
             console.log(pdf.numberOfPages);
             res.header("Content-Type", "application/pdf");
